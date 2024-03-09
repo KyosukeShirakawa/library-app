@@ -3,13 +3,13 @@ const myLibrary = [];
 
 
 const formButton = document.querySelector(".form-btn");
-const bookForm = document.getElementById("book-form");
+const formContainer = document.getElementById("form-container");
 
 formButton.addEventListener('click', () => {
-  if( bookForm.style.display ==='block'){
-    bookForm.style.display = 'none';
+  if(formContainer.style.display ==='block'){
+    formContainer.style.display = 'none';
   }else {
-    bookForm.style.display = 'block';
+    formContainer.style.display = 'block';
 
   }
   
