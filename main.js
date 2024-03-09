@@ -2,8 +2,12 @@ const myLibrary = [];
 
 
 
+const bookContainer = document.querySelector(".book-container");
 const formButton = document.querySelector(".form-btn");
 const formContainer = document.getElementById("form-container");
+
+
+
 
 formButton.addEventListener('click', () => {
   if(formContainer.style.display ==='block'){

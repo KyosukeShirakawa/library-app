@@ -5,10 +5,79 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: navy;
   background-color: rgb(244, 162, 226);
 }
 
-table {
+h1 {
+  font-size: 3em;
+}
+
+.book-container {
+  display: flex;
+  text-align: left;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+.card {
+  background-color: pink;
+  padding: 10px;
+  border-radius: 10px;
+  border: 7px solid navy;
+
+}
+
+caption {
+  padding: 10px;
+  font-style: italic;
+  letter-spacing: 4px;
+}
+
+
+
+
+form {
+  border: 1px solid rgb(11, 19, 108);
+  border-radius: 5px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  letter-spacing: 1px;
+  background-color: navy;
+  color: pink;
+}
+
+form input {
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  border-radius: 5px;
+}
+button:hover,
+button:focus {
+  background: rgb(156, 14, 244);
+  color: #fff;
+}
+
+
+button, 
+input {
+  font-family: inferit;
+  font-size: 100%;
+  margin-bottom: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+/* table {
   font-style: italic;
   table-layout: fixed;
   width: 100%;
@@ -68,53 +137,4 @@ tfoot {
 thead th,
 tfoot  {
   border: 3px solid rgb(11, 19, 108);
-}
-
-caption {
-  padding: 10px;
-  font-style: italic;
-  letter-spacing: 4px;
-}
-
-
-
-
-form {
-  border: 1px solid rgb(11, 19, 108);
-  border-radius: 5px;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  letter-spacing: 1px;
-  background-color: rgb(183, 255, 188);
-  color: navy;
-}
-
-form input {
-  flex: 1;
-}
-
-button {
-  cursor: pointer;
-  appearance: none;
-  border-radius: 5px;
-}
-button:hover,
-button:focus {
-  background: #000;
-  color: #fff;
-}
-
-
-button, 
-input {
-  font-family: inferit;
-  font-size: 100%;
-  margin-bottom: 20px;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
+} */
