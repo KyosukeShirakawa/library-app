@@ -10,90 +10,14 @@
     <div class="library">
       <h1>My Library</h1>
       <div class="book-container">
-        <div class="card">
-          <p class="title">Title: Harry Potter and the Philosopher's Stone</p>
-          <p class="author">Author: J.K. Rowling</p>
-          <p class="page">No. of Pages: 352</p>
-          <p class="is-read">Have you read it?: Yes</p>
-        </div>
-        <div class="card">
-          <p class="title">Title: Harry Potter and the Philosopher's Stone</p>
-          <p class="author">Author: J.K. Rowling</p>
-          <p class="page">No. of Pages: 352</p>
-          <p class="is-read">Have you read it?: Yes</p>
-        </div>
-        <div class="card">
-          <p class="title">Title: Harry Potter and the Philosopher's Stone</p>
-          <p class="author">Author: J.K. Rowling</p>
-          <p class="page">No. of Pages: 352</p>
-          <p class="is-read">Have you read it?: Yes</p>
-        </div>
-        <div class="card">
-          <p class="title">Title: Harry Potter and the Philosopher's Stone</p>
-          <p class="author">Author: J.K. Rowling</p>
-          <p class="page">No. of Pages: 352</p>
-          <p class="is-read">Have you read it?: Yes</p>
-        </div>
-
       </div>
-
-
-    
-
-
-      <!-- <table class="books">
-        <caption>
-          My Library
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">No. of Pages</th>
-            <th scope="col">Read</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>The Lord of the Rings</td>
-            <td>J. R. R. Tolkien</td>
-            <td>1137</td>
-            <td>No</td>
-          </tr>
-          <tr>
-            <td>Harry Potter and the Philosopher's Stone</td>
-            <td>J.K. Rowling</td>
-            <td>352</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>aaaa</td>
-            <td>kyo</td>
-            <td>666</td>
-            <td>yess</td>
-          </tr>
-          <tr>
-            <td>aaaa</td>
-            <td>kyo</td>
-            <td>666</td>
-            <td>yess</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th colspan="2">Total Books</th>
-            <td colspan="2">4</td>
-          </tr>
-        </tfoot>
-      </table> -->
-
       <button class="form-btn">NEW BOOK</button>
       <div id="form-container" style="display: block;">
         <form id="book-form" action="" method="get">
           <label for="book-title">Title:</label>
           <input type="text" id="book-title" name="book-title" placeholder="e.g. Harry Potter and the Philosopher's Stone"> 
           <label for="author">Author:</label>
-          <input type="text" id="author" name="author" placeholder="e.g. J.K. Rowling">
+          <input type="text" id="book-author" name="author" placeholder="e.g. J.K. Rowling">
           <label for="book-page">No. of pages:</label>
           <input type="number" id="book-page" name="book-page" placeholder="e.g. 352">
           <p>Have you read this book?</p>
@@ -105,8 +29,9 @@
             <input type="radio" id="no" name="is-read" value="no">
             <label for="no">No</label>
           </div>
+          <button type="submit" class="submit-btn">Submit</button>
           <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
+
         </form>
       </div>
     </div>
