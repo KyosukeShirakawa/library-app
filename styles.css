@@ -1,10 +1,78 @@
 body {
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+  padding: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+table {
+  font-style: italic;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(11, 19, 108);
+  margin-bottom: 20px;
+}
+thead th:nth-child(1){
+  width: 40%;
+}
+thead th:nth-child(2){
+  width: 30%;
+}
+thead th:nth-child(3){
+  width: 15%;
+}
+thead th:nth-child(4){
+  width: 15%;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+th, 
+td {
+  padding: 8px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tbody th,
+tbody td{
+  background-color: rgb(242, 214, 180);
+  border: 3px solid rgb(11, 19, 108);
+}
+
+thead,
+tfoot {
+  background-color: rgb(237, 147, 36);
+  color: rgb(11, 19, 108);
+}
+
+thead th,
+tfoot  {
+  border: 3px solid rgb(11, 19, 108);
+}
+
+caption {
+  padding: 10px;
+  font-style: italic;
+  letter-spacing: 4px;
+}
+
+
+
 
 form {
   border: 1px solid gray;

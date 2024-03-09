@@ -1,7 +1,10 @@
 const myLibrary = [];
 
+
+
 const formButton = document.querySelector(".form-btn");
 const bookForm = document.getElementById("book-form");
+
 formButton.addEventListener('click', () => {
   if( bookForm.style.display ==='block'){
     bookForm.style.display = 'none';
@@ -11,7 +14,6 @@ formButton.addEventListener('click', () => {
   }
   
 });
-
 
 
 function Book(title, author, pages, read) {
@@ -30,7 +32,15 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(book) {
-  myLibrary.push(book);
+  if(!myLibrary.includes(book))
+   myLibrary.push(book);
+}
+
+function displayBooks() {
+  myLibrary.forEach((book) => {
+    console.log(book);
+
+  });
 }
 
 
