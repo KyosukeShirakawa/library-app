@@ -9,29 +9,55 @@ body {
   background-color: rgb(244, 162, 226);
 }
 
-h1 {
-  font-size: 3em;
+h1, h2, p {
+  margin: 0;
 }
+
+h1{
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+
+
 
 
 .book-container {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   text-align: left;
   gap: 10px;
   margin-bottom: 20px;
+  
 
 }
 .card {
+
   background-color: pink;
-  padding: 5px;
+  padding: 10px 10px 0 10px;
   border-radius: 10px;
   border: 7px solid navy;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .card p {
+  font-size: 1em;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.card button {
+  border: 3px solid navy;
+  color: navy;
+  align-self: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
 }
 
 caption {
@@ -66,8 +92,8 @@ button {
 }
 button:hover,
 button:focus {
-  background: rgb(156, 14, 244);
-  color: #fff;
+  background: navy;
+  color: pink;
 }
 
 
@@ -78,69 +104,19 @@ input {
   margin-bottom: 20px;
   padding: 0;
   box-sizing: border-box;
+  border: 5px solid pink;
+  border-radius: 5px;
+
+}
+
+input:focus {
+  border: 10px solid pink;
+}
+
+.form-btn {
+  color: navy;
+  border: 5px solid navy;
 }
 
 
 
-
-/* table {
-  font-style: italic;
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border: 3px solid rgb(11, 19, 108);
-  margin-bottom: 50px;
-  
-}
-
-
-thead th:nth-child(1){
-  width: 30%;
-}
-thead th:nth-child(2){
-  width: 30%;
-}
-thead th:nth-child(3){
-  width: 20%;
-}
-thead th:nth-child(4){
-  width: 20%;
-}
-
-th {
-  letter-spacing: 2px;
-}
-
-td {
-  letter-spacing: 1px;
-}
-
-th, 
-td {
-  padding: 8px;
-}
-
-tbody td {
-  text-align: center;
-}
-
-tfoot th {
-  text-align: right;
-}
-
-tbody th,
-tbody td{
-  background-color: rgb(242, 214, 180);
-  border: 3px solid rgb(11, 19, 108);
-}
-
-thead,
-tfoot {
-  background-color: rgb(237, 147, 36);
-  color: rgb(11, 19, 108);
-}
-
-thead th,
-tfoot  {
-  border: 3px solid rgb(11, 19, 108);
-} */
