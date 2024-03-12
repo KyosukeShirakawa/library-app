@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const formButton = document.querySelector(".form-btn");
   const formContainer = document.getElementById("form-container");
   const submitBtn = document.querySelector(".submit-btn");
-  const bookTitle = document.querySelector("#book-title");
-  const bookAuthor = document.querySelector("#book-author");
-  const bookPage = document.querySelector("#book-page");
-  const isRead = document.getElementsByName("is-read");
+  // const bookTitle = document.querySelector("#book-title");
+  // const bookAuthor = document.querySelector("#book-author");
+  // const bookPage = document.querySelector("#book-page");
+  // const isRead = document.getElementsByName("is-read");
   const bookContainer = document.querySelector(".book-container");
  
   //Hide or show the new book form
@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     //Create variables
-    let title = bookTitle.value;
-    let author = bookAuthor.value;
-    let pages = bookPage.value;
-    let read =  isRead.value;
+    let title = document.getElementById("book-title").value;
+    let author = document.getElementById("book-author").value;
+    let pages = document.getElementById("book-page").value;
+    let read = document.querySelector('input[name="is-read"]:checked').value;
+    
     
     //Create a new Book
     let newBook = new Book(title, author, pages, read);
-
     //Add the book to the array
     addBookToLibrary(newBook);
     
@@ -75,6 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
       removeBtn.classList.add('remove-btn');
       card.classList.add('card');
       
+
+
+
       //Put the card to the div container
       bookContainer.appendChild(card);
   
@@ -87,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   bookContainer.addEventListener('click', (e) => {
     if(e.target.classList.contains('remove-btn')){
       // console.log(`i pop this ${myLibrary.pop()}`);
+
+
       console.log(myLibrary);
       console.log("removing a book");
       removeBookFromLibrary();
