@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let title = document.getElementById("book-title").value;
     let author = document.getElementById("book-author").value;
     let pages = document.getElementById("book-page").value;
-    let read = document.querySelector('input[name="is-read"]:checked').value;
+    let read = Boolean(document.querySelector('input[name="is-read"]:checked').value);
     
     
     //Create a new Book
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title.textContent = `Title: ${book.title}`;
       author.textContent = `Author: ${book.author}`;
       pages.textContent = `No. of Pages ${book.pages}`;
-      read.textContent = `Have you read this book?: ${book.isRead}`;
+      read.textContent = `Have you read this book?: ${book.read}`;
       removeBtn.textContent = 'Remove';
 
       //Store in a card
@@ -112,7 +112,7 @@ function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = Boolean(read);
+  this.read = read;
 
   this.info = function() {
     return 'info';
