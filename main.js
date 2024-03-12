@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookPage = document.querySelector("#book-page");
   const isRead = document.getElementsByName("is-read");
   const bookContainer = document.querySelector(".book-container");
-  const removeBtns = document.querySelectorAll(".remove-btn")
-
+ 
+  //Hide or show the new book form
   formButton.addEventListener('click', () => {
     if(formContainer.style.display ==='block'){
       formContainer.style.display = 'none';
@@ -20,29 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
       formContainer.style.display = 'block';
     }
   });
+
+  //Submit the form and add a new book
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
+
+    //Create variables
     let title = bookTitle.value;
     let author = bookAuthor.value;
     let pages = bookPage.value;
     let read =  isRead.value;
+    
+    //Create a new Book
     let newBook = new Book(title, author, pages, read);
-    console.log(`this is a new book: ${newBook}`);
+
+    //Add the book to the array
     addBookToLibrary(newBook);
+    
+    //display the books in myLibrary
     displayBooks();
  
   });
 
-  bookContainer.addEventListener('click', (e) => {
-    if(e.target.classList.contains('remove-btn')){
-      console.log(`i pop this ${myLibrary.pop()}`);
-    }
-  });
 
 
 
   function displayBooks() {
     myLibrary.forEach((book) => {
+
+      //Create HTML elements
       let card = document.createElement('div');
       let title = document.createElement('p');
       let author = document.createElement('p');
@@ -51,31 +57,43 @@ document.addEventListener('DOMContentLoaded', () => {
       let removeBtn = document.createElement('button');
       
 
-
+      //add text to the elements
       title.textContent = `Title: ${book.title}`;
       author.textContent = `Author: ${book.author}`;
       pages.textContent = `No. of Pages ${book.pages}`;
       read.textContent = `Have you read this book?: ${book.isRead}`;
       removeBtn.textContent = 'Remove';
 
-
+      //Store in a card
       card.appendChild(title);
       card.appendChild(author);
       card.appendChild(pages);
       card.appendChild(read);
       card.appendChild(removeBtn);
 
+      //Assign CSS class 
       removeBtn.classList.add('remove-btn');
       card.classList.add('card');
-
-  
-      bookContainer.appendChild(card);
       
-      console.log(book);
+      //Put the card to the div container
+      bookContainer.appendChild(card);
   
     });
   }
   
+
+  //Remove button to remove a book
+
+  bookContainer.addEventListener('click', (e) => {
+    if(e.target.classList.contains('remove-btn')){
+      // console.log(`i pop this ${myLibrary.pop()}`);
+      console.log(myLibrary);
+      console.log("removing a book");
+      removeBookFromLibrary();
+      console.log(myLibrary);    
+    }
+  });
+
 
 });
 
@@ -105,11 +123,20 @@ function Book(title, author, pages, read) {
 // book functions
 
 function addBookToLibrary(book) {
-  if(!myLibrary.includes(book))
+  if(!myLibrary.includes(book)){
    myLibrary.push(book);
+   console.log(myLibrary);
+
+  }
+
 }
 
+function removeBookFromLibrary(book){
+  if(myLibrary.includes(book)){
+    myLibrary.pop(book);
+  }
 
+}
 
 
 
