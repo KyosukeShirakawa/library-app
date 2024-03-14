@@ -71,7 +71,7 @@ caption {
 
 form {
   border: 1px solid rgb(11, 19, 108);
-  border-radius: 5px;
+  border-radius: 30px;
   padding: 50px;
   display: flex;
   flex-direction: column;

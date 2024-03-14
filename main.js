@@ -29,13 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let title = document.getElementById("book-title").value;
     let author = document.getElementById("book-author").value;
     let pages = document.getElementById("book-page").value;
-    let read = Boolean(document.querySelector('input[name="is-read"]:checked').value);
+    let read;
+    if(document.querySelector('input[name="is-read"]:checked').value==='yes'){
+       read = true;
+    }else if (document.querySelector('input[name="is-read"]:checked').value==='no'){
+       read = false;
+    }
+    
+
     
     
     //Create a new Book
     let newBook = new Book(title, author, pages, read);
     //Add the book to the array
-    addBookToLibrary(newBook);
+    newBook.addBookToLibrary(newBook);
     
     //display the books in myLibrary
     displayBooks();
@@ -60,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //add text to the elements
       title.textContent = `Title: ${book.title}`;
       author.textContent = `Author: ${book.author}`;
-      pages.textContent = `No. of Pages ${book.pages}`;
+      pages.textContent = `No. of Pages: ${book.pages}`;
       read.textContent = `Have you read this book?: ${book.read}`;
       removeBtn.textContent = 'Remove';
 
@@ -108,40 +115,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Book object
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+    Book (title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 
-  this.info = function() {
-    return 'info';
+    this.info = function() {
+      return 'info';
+    }
+
+
+    Book.prototype.toRead = function() {
+      this.read = true;
+    }
   }
 
 
-  Book.prototype.toRead = function() {
-    this.read = true;
+  // book functions
+
+   addBookToLibrary(book) {
+    if(!myLibrary.includes(book)){
+    myLibrary.push(book);
+    console.log(myLibrary);
+
+    }
+
   }
+
+   removeBookFromLibrary(book){
+    if(myLibrary.includes(book)){
+      myLibrary.pop(book);
+    }
+
+  }
+
 }
-
-
-// book functions
-
-function addBookToLibrary(book) {
-  if(!myLibrary.includes(book)){
-   myLibrary.push(book);
-   console.log(myLibrary);
-
-  }
-
-}
-
-function removeBookFromLibrary(book){
-  if(myLibrary.includes(book)){
-    myLibrary.pop(book);
-  }
-
-}
-
-
 
