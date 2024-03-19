@@ -113,7 +113,7 @@ input:focus {
   border: 10px solid pink;
 }
 
-.form-btn {
+#form-btn {
   color: navy;
   border: 5px solid navy;
 }
