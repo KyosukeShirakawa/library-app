@@ -26,14 +26,6 @@ const myLibrary = (function() {
   //bind events
   newFormBtn.addEventListener('click',toggleForm);
   submitBtn.addEventListener('click', handleSubmittedInfo);
-//   <!-- <div class="card">
-//   <p class="title">Title: fwefewf</p>
-//   <p class="author">Author: ewfref</p>
-//   <p class="pages">No. of pages: 332</p>
-//   <p class="is-read">Have you read this book?: Yea</p>
-//   <button class="remove-btn">Remove</button>
-// </div> -->
-
 
   function render() {
     bookContainer.innerHTML = '';
@@ -59,12 +51,17 @@ const myLibrary = (function() {
 
       let removeBtn = document.createElement('button')
       removeBtn.setAttribute('class','remove-btn');
-      removeBtn.textContent = "Remove"
+      removeBtn.textContent = "Remove";
+      removeBtn.addEventListener('click', () => removeBookFromLibrary(book));
+
 
       card.appendChild(title);
       card.appendChild(author);
       card.appendChild(pages);
       card.appendChild(read);
+      card.appendChild(removeBtn);
+
+
 
       bookContainer.appendChild(card);
     })
@@ -100,12 +97,13 @@ const myLibrary = (function() {
 
 
 
-    // function removeBookFromLibrary(book){
-    //   if(myLibrary.includes(book)){
-    //     myLibrary.pop(book);
-    //   }
-  
-    // }
+  function removeBookFromLibrary(book){
+    let index = library.indexOf(book);
+    if(index > -1) {
+      library.splice(index, 1);
+    }
+    render();
+  }
 
 
 
