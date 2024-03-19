@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  padding: 100px;
-  display: flex;
-  justify-content: center;
+  padding: 50px;
+  /* display: flex;
+  justify-content: center;  */
   align-items: center;
   text-align: center;
-  color: navy;
-  background-color: rgb(244, 162, 226);
+  color: pink;
+  background-color: black;
 }
 
 h1, h2, p {
@@ -22,10 +22,10 @@ h1{
 
 
 
-.book-container {
+#book-container {
   /* display: flex; */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   text-align: left;
   gap: 10px;
   margin-bottom: 20px;
@@ -33,14 +33,14 @@ h1{
 
 }
 .card {
-
-  background-color: pink;
+  background-color: black;
   padding: 10px 10px 0 10px;
   border-radius: 10px;
-  border: 7px solid navy;
+  border: 1px solid pink;
   overflow-wrap: break-word;
   display: flex;
   flex-direction: column;
+  text-align: center;
 
 }
 
@@ -52,8 +52,8 @@ h1{
 }
 
 .card button {
-  border: 3px solid navy;
-  color: navy;
+  border: 3px solid rgb(154, 98, 7);
+  color: rgb(128, 51, 12);
   align-self: center;
   margin-bottom: 10px;
   font-weight: bold;
@@ -70,20 +70,22 @@ caption {
 
 
 form {
-  border: 1px solid rgb(11, 19, 108);
+  border: 3px solid black;
   border-radius: 30px;
   padding: 50px;
   display: flex;
   flex-direction: column;
+
   text-align: left;
   letter-spacing: 1px;
-  background-color: navy;
+  background-color: black;
   color: pink;
 }
 
 form input {
   flex: 1;
 }
+
 
 button {
   cursor: pointer;
@@ -92,7 +94,7 @@ button {
 }
 button:hover,
 button:focus {
-  background: navy;
+  background: black;
   color: pink;
 }
 
@@ -104,18 +106,29 @@ input {
   margin-bottom: 20px;
   padding: 0;
   box-sizing: border-box;
-  border: 5px solid pink;
+  border: 3px solid pink;
   border-radius: 5px;
 
 }
+
+
 
 input:focus {
   border: 10px solid pink;
 }
 
 #form-btn {
-  color: navy;
-  border: 5px solid navy;
+  color: pink;
+  border: 2px solid pink;
+  background-color: black;
+  padding: 5px;
+}
+
+
+#form-btn:hover {
+  color: black;
+  background-color: pink;
+
 }
 
 
